@@ -63,6 +63,81 @@ function unequal(i, j, k){
     return i !== j && i !== k & j !== k;
 } // for more params?
 
-// stopped at 48
+// 48. write a function that determines whether a two-digit decimal is a repdigit or not.
+function repdigit(i){
+    if (i % 10 === Math.floor(i / 10)){
+        return "Repdigit!"
+    }
+    return "No repdigit!"
+} // for more digits?
+
+// 49. write a function that adds two amounts with surcharge; for each amount less than or equal to 10 the surcharge is 1, else - 2.
+function addWithSurcharge(i, j){
+    let surcharge = 0;
+
+    if (i <= 10){surcharge++;}
+    else surcharge+=2;
+
+    if(j <= 10){surcharge++;}
+    else surcharge+=2;
+
+    return i + j + surcharge;
+}
+
+// 55.
+
+// 56. write a function that rotates the elements of an array - all elements should be moved one position to the left.
+function rotate(arr){
+    arr.push(arr.shift());
+    return arr;
+}
+
+// 57. write a function that adds an element to the end of an array if that element isn't in the array already.
+function add(arr, i){
+    if (arr.indexOf(i) === -1){
+        arr.push(i);
+    } else return arr;
+    return arr;
+}
+
+// 58. write a function that concatenates two arrays. the longer array should be appended to the shorter one. if they're equally long, the 2nd array should be appended to 1st one.
+function concatUp(arr1, arr2){
+    if (arr2.length >= arr1.length) return arr1.concat(arr2);
+    return arr2.concat(arr1);
+} // WWWWWWWWWWWWWWWWWWWWWWWWWWWWWw
+
+// 59. write a function that copies the first half of an array. with an odd number of array elements, the middle element should belong to the first half.
+function halve(arr){
+    if (arr.length % 2 === 0) return arr.slice(0, arr.length / 2);
+    return arr.slice(0, arr.length / 2 + 1);
+}
+
+// 60. write a function that takes an array of words and returns a string by concatenating the words in the array, separated by commas and the last word by an end. an empty array returns an empty string.
+function list(arr){
+
+} // stopped here
+
+
+// in general, multiple different separators?? separators = [",", "and"]
+
+
+
 
 // return i % 2 === 0;
+
+// https://www.jshero.net/en/success.html
+
+
+function sort(arr){
+    let emptyArr = [];
+    for (let i = 0; i < arr.length; i++){
+        for (let k = 0; k < arr.length; k++){
+            
+        }
+    }
+
+    return emptyArr;
+}
+console.log(sort([4, 1, 3, 20, 16, -2000, 59, 900]))
+// https://stackoverflow.com/questions/16243366/sorting-array-with-numbers-without-sort-method
+
