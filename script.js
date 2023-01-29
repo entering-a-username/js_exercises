@@ -114,10 +114,111 @@ function halve(arr){
 
 // 60. write a function that takes an array of words and returns a string by concatenating the words in the array, separated by commas and the last word by an end. an empty array returns an empty string.
 function list(arr){
+    let lastWord = arr[arr.length - 1];
+    let notLastWord = arr.slice(0, arr.length - 1);
 
-} // stopped here
+    if (!(arr.length === 0)) {
+        if (arr.length === 1) return arr[0];
+        else return notLastWord.join(", ") + " and " + lastWord;
+    }
+    return "";
+}
 
+// 62. write a function that takes an array of ascending numbers and returns the median of those numbers.
+function median(arr){
+    if (arr.length % 2 === 0){
+        return (arr[arr.length / 2 - 1] + arr[arr.length / 2])/2;
+    } else if (arr.length === 1) return arr[0];
+    return arr[Math.round(arr.length / 2 - 1)];
+}
 
+// 64. write a function that takes one line of JS and returns a possible line comment trimmed. we assume that the code doesn't contain the comment characters within a string.
+function cutComment(i) {
+    if(i.includes("//")){
+        let index = i.indexOf("/");
+        return i.substr(index + 2).trim();
+    }
+    return null;
+}
+
+// 66. write a function that calculates the factorial of a positive integer.
+function factorial(j) {
+    let factorial = 1;
+    for (let i = 1; i <= j; i++){
+        factorial *= i;
+    }
+    return factorial;
+}
+
+// 67. write a function that accepts an array filled with numbers and returns the arithmetic mean of those numbers.
+function mean(arr){
+    let sum = 0;
+    if (arr.length === 1) return arr[0];
+    for (let i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+
+// 68. write a function that takes a natural number and returns a string of that many spaces.
+function spaces(j){
+    let str = "";
+    let i = 0;
+    if (j === 0) return str;
+    do {
+        i++;
+        str += " ";
+    } while (i < j)
+    return str;
+}
+
+// 69. write a function that takes two natural numbers and calculates their lcm (least common multiple).
+function lcm(j, k){
+    let i = 1; // cant be 0
+    while (true) {
+        if (i % j === 0 && i % k === 0){
+            break;
+        } i++;
+    }
+    return i;
+}
+
+// 70. write a function that takes two natural numbers and calculates their gcd (greatest common divisor).
+function gcd(j, k){
+    let i;
+    if (j > k) {i = j}
+    else i = k;
+
+    while (true) {
+        if (j % i === 0 && k % i === 0) {
+            break;
+        } i--;
+    }
+    return i;
+}
+
+// 71. write a function that checks whether a passed number is prime.
+function isPrime(j){
+    let dividors = [];
+    for (let i = 0; i <= j; i++){
+        if (j % i === 0) dividors.push(i);
+    }
+    if (dividors.length !== 2) return false;
+    return true;
+}
+
+// 72. write a function that calculates the sum of all elements of a two-dimensional array.
+function sum(arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++){
+        for (let j = 0; j < arr[i].length; j++){
+            sum += arr[i][j];
+        }
+    }
+    return sum;
+}
+
+// 55
 // in general, multiple different separators?? separators = [",", "and"]
 
 
