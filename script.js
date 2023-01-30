@@ -151,7 +151,7 @@ function factorial(j) {
 }
 
 // 67. write a function that accepts an array filled with numbers and returns the arithmetic mean of those numbers.
-function mean(arr){
+function mean(arr) {
     let sum = 0;
     if (arr.length === 1) return arr[0];
     for (let i = 0; i < arr.length; i++){
@@ -161,7 +161,7 @@ function mean(arr){
 }
 
 // 68. write a function that takes a natural number and returns a string of that many spaces.
-function spaces(j){
+function spaces(j) {
     let str = "";
     let i = 0;
     if (j === 0) return str;
@@ -173,7 +173,7 @@ function spaces(j){
 }
 
 // 69. write a function that takes two natural numbers and calculates their lcm (least common multiple).
-function lcm(j, k){
+function lcm(j, k) {
     let i = 1; // cant be 0
     while (true) {
         if (i % j === 0 && i % k === 0){
@@ -184,7 +184,7 @@ function lcm(j, k){
 }
 
 // 70. write a function that takes two natural numbers and calculates their gcd (greatest common divisor).
-function gcd(j, k){
+function gcd(j, k) {
     let i;
     if (j > k) {i = j}
     else i = k;
@@ -198,7 +198,7 @@ function gcd(j, k){
 }
 
 // 71. write a function that checks whether a passed number is prime.
-function isPrime(j){
+function isPrime(j) {
     let dividors = [];
     for (let i = 0; i <= j; i++){
         if (j % i === 0) dividors.push(i);
@@ -208,7 +208,7 @@ function isPrime(j){
 }
 
 // 72. write a function that calculates the sum of all elements of a two-dimensional array.
-function sum(arr){
+function sum(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++){
         for (let j = 0; j < arr[i].length; j++){
@@ -218,7 +218,59 @@ function sum(arr){
     return sum;
 }
 
-// 55
+// 73. write a function that calculates the maximum of an arbitrary number of numbers.
+function max() {
+    let max = arguments[0];
+    for (let i = 0; i < arguments.length; i++){
+        if (arguments[i] > max){
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+
+// 74. write a function that takes a string and returns the first integer present in it.
+
+// 75. write a function that takes a string with a summation task and returns its result as a number.
+function add(j) {
+    let sum = 0;
+    let result = j.split("+");
+    for (let i = 0; i < result.length; i++){
+        sum += Number(result[i]);
+    }
+    return sum;
+}
+
+// 77. write a function that reverses the order of the characters in a string.
+function reverse(j) {
+    let empt = [];
+    for (let i = j.length - 1; i >= 0; i--){ // i >= 0 crucial!
+        empt.push(j[i]);
+    }
+    return empt.join("");
+} // without recursion
+function reverse(j) {
+    if (j.length <= 1) {return j;}
+    return j.charAt(j.length - 1) + reverse(j.substr(0, j.length - 1));
+} // with recursion
+
+// 80. write a function that takes a natural number and returns the sum of all multiples of 3 and 5 that are truly less than that number.
+function sumMultiples(j) {
+    let multiple = [];
+    for (let i = 0; i < j; i++){
+        if (i % 3 === 0 || i % 5 === 0) {
+            multiple.push(i);
+        }
+    }
+    let sum = 0;
+    for (let i = 0; i < multiple.length; i++) {
+        sum += multiple[i];
+    }
+    return sum;
+}
+
+
+// 55 74 78 79 81
 // in general, multiple different separators?? separators = [",", "and"]
 
 
